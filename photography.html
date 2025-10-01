@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font and custom theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-dark': '#1e293b',
+                        'accent-blue': '#3b82f6',
+                        'light-bg': '#f9fafb',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Apply smooth scrolling and Inter font globally */
+        body {
+            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* light-bg */
+        }
+        /* Custom styling for subtle hover effect on images */
+        .gallery-item img {
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-primary-dark">
+
+    <!-- Header & Navigation -->
+    <header id="top" class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <a href="#top" class="text-2xl font-extrabold text-primary-dark tracking-tight hover:text-accent-blue transition duration-300">
+                [Your Name] Photography
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#portfolio" class="text-primary-dark hover:text-accent-blue font-medium transition duration-300 rounded-lg p-2">Portfolio</a>
+                <a href="#about" class="text-primary-dark hover:text-accent-blue font-medium transition duration-300 rounded-lg p-2">About</a>
+                <a href="#contact" class="text-primary-dark hover:text-accent-blue font-medium transition duration-300 rounded-lg p-2">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Placeholder (Not functional, but shows placement) -->
+            <div class="md:hidden">
+                <button class="text-primary-dark p-2 rounded-md hover:bg-gray-100 focus:outline-none">
+                    <!-- Hamburger Icon (Lucide-react/SVG equivalent) -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] md:h-[70vh] flex items-center justify-center bg-gray-900 overflow-hidden shadow-lg">
+            <!-- Background Image Placeholder (Replace with your actual hero image) -->
+            <img src="https://placehold.co/1920x1080/1f2937/d1d5db?text=Capturing+The+Moment" alt="Hero background image" class="absolute inset-0 w-full h-full object-cover opacity-60">
+
+            <div class="relative z-10 text-center p-6 bg-black/40 backdrop-blur-sm rounded-xl m-4 border-2 border-white/50">
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white mb-4 leading-tight">
+                    Vision Through The Lens
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-200 mb-8 max-w-lg mx-auto">
+                    Specializing in stunning portraits, evocative landscapes, and powerful editorial work.
+                </p>
+                <a href="#portfolio" class="inline-block px-8 py-3 text-lg font-bold text-white bg-accent-blue rounded-full shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105">
+                    View Portfolio
+                </a>
+            </div>
+        </section>
+
+        <!-- Photography Gallery Section -->
+        <section id="portfolio" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-12 text-center text-primary-dark">Featured Work</h2>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+
+                <!-- Gallery Item 1: Portrait -->
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://placehold.co/800x1200/4F46E5/FFFFFF?text=Portrait" alt="A detailed portrait shot" class="w-full h-auto object-cover rounded-lg">
+                </div>
+
+                <!-- Gallery Item 2: Landscape -->
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg col-span-2 sm:col-span-1">
+                    <img src="https://placehold.co/1200x800/10B981/FFFFFF?text=Nature+Shot" alt="Vibrant nature scene" class="w-full h-auto object-cover rounded-lg">
+                </div>
+
+                <!-- Gallery Item 3: Street -->
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://placehold.co/800x800/EF4444/FFFFFF?text=Street+Photo" alt="Candid street photography" class="w-full h-auto object-cover rounded-lg">
+                </div>
+
+                <!-- Gallery Item 4: Fashion (Tall) -->
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg row-span-2 hidden lg:block">
+                    <img src="https://placehold.co/600x900/F59E0B/FFFFFF?text=Fashion" alt="High-fashion shot" class="w-full h-full object-cover rounded-lg">
+                </div>
+
+                <!-- Gallery Item 5: Abstract -->
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg col-span-2">
+                    <img src="https://placehold.co/1000x700/06B6D4/FFFFFF?text=Abstract" alt="Abstract composition" class="w-full h-auto object-cover rounded-lg">
+                </div>
+
+                <!-- Gallery Item 6: Cityscape -->
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg hidden sm:block">
+                    <img src="https://placehold.co/900x900/6366F1/FFFFFF?text=Cityscape" alt="Urban cityscape at night" class="w-full h-auto object-cover rounded-lg">
+                </div>
+
+                <!-- Gallery Item 7: Food -->
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://placehold.co/700x1100/EC4899/FFFFFF?text=Food" alt="Stylized food photography" class="w-full h-auto object-cover rounded-lg">
+                </div>
+
+                <!-- Gallery Item 8: Editorial (Wide) -->
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg col-span-2 lg:col-span-3">
+                    <img src="https://placehold.co/1400x500/14B8A6/FFFFFF?text=Editorial" alt="Wide editorial image" class="w-full h-auto object-cover rounded-lg">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-white py-16 md:py-24 shadow-inner">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-6 text-primary-dark">A Little About Me</h2>
+                <!-- Placeholder for a small profile image -->
+                <img src="https://placehold.co/150x150/e0e7ff/3b82f6?text=Photo" alt="Profile Photo" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-accent-blue">
+
+                <p class="text-lg text-gray-600 mb-4 leading-relaxed">
+                    Hello! My name is Alex, and I'm a photographer based in the beautiful Pacific Northwest. I believe photography is the art of telling a story without words—capturing the raw emotion, the fleeting moment, and the unique light of a scene.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    My work is driven by a passion for travel and human connection. Whether I'm shooting a wedding, a commercial campaign, or a remote landscape, my goal is always the same: to create imagery that is authentic, timeless, and deeply resonant. Let's create something powerful together.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-6 text-center text-primary-dark">Get In Touch</h2>
+            <p class="text-center text-lg text-gray-600 mb-10">I'm currently accepting new projects. Send me a message, and let's discuss your vision.</p>
+
+            <!-- Simple Contact Form (Action is placeholder) -->
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent-blue focus:border-accent-blue transition duration-200">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent-blue focus:border-accent-blue transition duration-200">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700">Project Details</label>
+                    <textarea id="message" name="message" rows="5" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent-blue focus:border-accent-blue transition duration-200"></textarea>
+                </div>
+                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-lg text-lg font-bold text-white bg-primary-dark hover:bg-gray-700 transition duration-300 transform hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-blue">
+                    Send Inquiry
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-lg font-semibold mb-4">[Your Name] Photography</p>
+            <div class="space-x-6 mb-6">
+                <a href="mailto:your.email@example.com" class="text-gray-300 hover:text-accent-blue transition duration-300">Email</a>
+                <a href="#" class="text-gray-300 hover:text-accent-blue transition duration-300">Instagram</a>
+                <a href="#" class="text-gray-300 hover:text-accent-blue transition duration-300">LinkedIn</a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2024 [Your Name]. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
